@@ -8,6 +8,10 @@ var app = express();
 
 var port = 3000;
 
+//Body parser MW
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
 app.use("/api", drivers);
 
 app.listen(port, function () {

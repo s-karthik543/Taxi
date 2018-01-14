@@ -19,8 +19,16 @@ router.get("/driver/:id", function (req, res, next) {
     });
 });
 
-//post 
-
+//post driver 
+router.post('/driver', function (req, res, next) {
+    // console.log("POSt",req)
+    db.drivers.save(req.body, function (err, savedBooking) {
+        if (err) {
+            res.send(err);
+        }
+        res.json(savedBooking);
+    });
+})
 
 /*
 //add driver
